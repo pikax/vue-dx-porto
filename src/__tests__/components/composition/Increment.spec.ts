@@ -1,12 +1,14 @@
 import { nextTick } from 'vue'
 import { mount } from '@vue/test-utils'
 import Increment from '../../../components/composition/Increment.vue'
-import { fixSFCType, mockVModel } from '../../utils'
+import { mockVModel } from '../../utils'
+
+
 
 describe("increment composition", () => {
 
   it('should render', () => {
-    const wrapper = mount(fixSFCType(Increment), {
+    const wrapper = mount(Increment, {
       props: {
         value: 11
       }
@@ -16,7 +18,7 @@ describe("increment composition", () => {
   })
 
   it('should update on button click', async () => {
-    const wrapper = mount(fixSFCType(Increment), {
+    const wrapper = mount(Increment, {
       props: {
         value: 11
       },
@@ -34,7 +36,7 @@ describe("increment composition", () => {
   })
 
   it('should allow to trigger click', async () => {
-    const wrapper = mount(fixSFCType(Increment), {
+    const wrapper = mount(Increment, {
       props: {
         value: 11
       },
@@ -50,14 +52,5 @@ describe("increment composition", () => {
     await nextTick()
 
     expect(wrapper.text()).toMatch("Value: 12")
-  })
-
-  it('test', () => {
-    const wrapper = mount(fixSFCType(Increment), {
-      props: {
-        value: '123'
-      }
-    })
-
   })
 })

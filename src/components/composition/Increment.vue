@@ -2,8 +2,8 @@
 	<p>Value: {{value}}</p>
 	<button @click="click">Increment</button>
 </template>
-<script>
-import { defineComponent } from "vue";
+<script lang="ts">
+import { defineComponent, ref, watchEffect } from "vue";
 import { useVModel } from "vue-composable";
 
 export default defineComponent({
@@ -19,8 +19,8 @@ export default defineComponent({
     const click = () => ++value.value;
 
     return {
-      value, 
-      click
+      value,
+      click,
     }
   },
 })
