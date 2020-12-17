@@ -1,6 +1,7 @@
 import { nextTick } from 'vue'
 import { mount } from '@vue/test-utils'
 import Increment from '../../../components/options/Increment.vue'
+import IncrementX from '../../../components/Increment.Options.vue'
 import { mockVModel } from '../../utils'
 describe("increment composition", () => {
   it('should render', () => {
